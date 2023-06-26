@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrao Form Sign Up </title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="BOOTSTRAP/bootstrap.css" type="text/css" rel="stylesheet" />
+    <style type="text/CSS">
+        #SindForm{
+            box-shadow: 0px 0px 3px black;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            color: whitesmoke;
+        }
+        i.fa,b{color: rgb(16, 74, 121);}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4" id="SingForm">
+                <h3 class="text-center"><i class="fa fa-users"></i> SIGN UP <hr/></h3>
+                <div class="form-group">
+                    <b>Firstname:</b>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" id="TxtFirstname" placeholder="Firstname" maxlength="20" class="form-control" />                   
+                    </div>
+                    <small class="text-danger" id="TxtFirstnameValidate"></small>
+                </div>
+                <div class="form-group">
+                    <b>Email Address:</b>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input type="text" id="TxtEmail Address" placeholder="Email Address" maxlength="20" class="form-control" />                   
+                    </div>
+                    <small class="text-danger" id="TxtEmaiAddressdValidate"></small>
+                </div>
+                <div class="form-group">
+                    <b>Your login:</b>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" id="TxtYour login" placeholder="Your Login" maxlength="20" class="form-control" />                   
+                    </div>
+                    <small class="text-danger" id="TxtFYourLoginValidate"></small>
+                </div>
+                <div class="form-group">
+                    <b>Password:</b>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-eye"></i></span>
+                        <input type="password" id="TxtPassword" placeholder="Your Password" maxlength="20" class="form-control" />                   
+                    </div>
+                    <small class="text-danger" id="TxtPasswordValidate"></small>
+                </div>
+                <hr/>
+                <div class="form-group">
+                    <a class="btn btn-primary" id="BtnSign Up"><i style="color: white;" class="fa fa-user-plus" ></i>Sign Up</a>               
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
