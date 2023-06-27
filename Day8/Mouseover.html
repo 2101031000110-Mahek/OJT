@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Over</title>
+</head>
+<body>
+    <img src="eye2.jfif" alt="" id="eye2">
+</body>
+
+<script>
+    var a=document.getElementById("eye2");
+    a.addEventListener("mouseover",()=>{
+        a.src="eye1.jfif";
+    });
+    a.addEventListener("mouseout",()=>{
+        a.src="eye2.jfif"
+    });
+</script>
+</html>

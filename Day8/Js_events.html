@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Event</title>
+    <script>
+        function loadme()
+        {
+            alert("Onload event fired");        
+        }
+    </script>
+</head>
+<body id="mybody" onload="loadme()">
+    <p> Press any Key to display Current Date: </p>
+    <input type="text" id="key"><br><br>
+
+    <script>
+        var Key=document.getElementById("key");
+        Key.addEventListener("keypress",()=>{
+            var a =new Date() ;
+            alert(a)
+        });
+    </script>
+    
+    Select Product : <select name="" id="Product">
+        <option value="400">Dosa</option>
+        <option value="150">Pav Bhagi</option>
+        <option value="20">Pani Puri</option>
+        <option value="25">Vadapav</option>
+    </select><br><br>
+    Net Prize : <input type="text" id="prize"><br><br>
+    Quantity : <input type="text" id="quantity"><br><br>
+    Total Amount : <input type="text" id="amount"><br><br>
+
+    <script>
+        var product = document.getElementById("Product");
+        var prize = document.getElementById("prize");
+        var quantity = document.getElementById("quantity");
+        var amount = document.getElementById("amount");
+        product.addEventListener("change",()=>{
+            prize.value = product.value;
+        });
+        amount.addEventListener("focus",()=>{
+            amount.value = product.value*quantity.value;
+        });
+    </script>
+
+    <input type="button" value="Generate Table" id="btn1"><br><br>
+
+    <script>
+        btn1.addEventListener("click",()=>{
+            document.write("<table border='1' width='100%' height='100px'>");
+                document.write("<tr>");
+                    document.write("<td align='center'>" + "Hello" + "</td>");
+                document.write("</tr>");
+                document.write("<tr>");
+                    document.write("<td align='center'>" + "Silver Oak" + "</td>");
+                document.write("</tr>");
+        });
+    </script>
+
+    <img src="b1.jfif" alt="" id="b1">
+
+    <script>
+        var a=document.getElementById("b1");
+        a.addEventListener("mouseover",()=>{
+            a.src="b2.jfif";
+        });
+        a.addEventListener("mouseout",()=>{
+            a.src="b1.jfif"
+        });
+    </script>
+
+</body>
+</html>
