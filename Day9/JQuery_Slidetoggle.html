@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery slideDown</title>
+
+    <!--CDN LINK OF JQUERY PARENT PLUG IN - COMPULSORY TO BE HERE. -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#flip").click(function(){
+                $("#panel").slideToggle("slow");
+            });
+        });
+    </script>
+
+    <style>
+        #panel,#flip{
+            padding: 50px;
+            text-align: center;
+            background-color: yellowgreen;
+            border: solid 1px #c3c3c3;
+        }
+        #panel {
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="flip">Click to slide down panel</div>
+    <div id="panel">Hello world!</div>
+
+</body>
+</html>
