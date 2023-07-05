@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Using javascript</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        small {
+            color: rgb(162, 52, 5);
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="TxtName" autofocus placeholder="Enter the name here.." maxlength="40"><br />
+    <small id="TxtNameValidation"></small>
+    <hr />
+    <input type="text" id="TxtContactNo" autofocus placeholder="Enter the contact no here.." maxlength="10"><br />
+    <small id="TxtContactNoValidation"></small>
+    <hr />
+    <input type="text" id="TxtEmailId" autofocus placeholder="Enter the email id here.." maxlength="50"><br />
+    <small id="TxtEmailIdValidation"></small>
+    <hr />
+    <textarea rows="5" id="TxtContactMsg" placeholder="enter the contact msg here.." maxlength="300"></textarea><br />
+    <small id="TxtContactMsgValidation"></small>
+    <hr />
+    <button id="BtnSubmit">Submit here...</button>
+
+    <script>
+        var FNameLNameRegEx = /^([a-zA-Z]{2,20})$/;
+        var FullNameRegEx = /^([a-zA-Z ]{2,40})$/;
+        var PasswordRegEx = /^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[^\w\s]).{8,12}$/;
+        var EmailIdRegEx = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,8}\b$/i;
+        var ConNoRegEx = /^([0-9]{10})$/;
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var TxtName = document.getElementById('TxtName');
+            var TxtNameValidation = document.getElementById('TxtNameValidation');
+            var TxtContactNo = document.getElementById('TxtContactNo');
+            var TxtContactNoValidation = document.getElementById('TxtContactNoValidation');
+            var TxtEmailId = document.getElementById('TxtEmailId');
+            var TxtEmailIdValidation = document.getElementById('TxtEmailIdValidation');
+            var TxtContactMsg = document.getElementById('TxtContactMsg');
+            var TxtContactMsgValidation = document.getElementById('TxtContactMsgValidation');
+            var BtnSubmit = document.getElementById('BtnSubmit');
+
+            TxtName.addEventListener('blur', function () {
+                TxtNameValidation.innerHTML = '';
+                if (this.value === '' || this.value === null) {
+                    TxtNameValidation.innerHTML = '(*) Name Required...!!';
+                } else {
+                    if (!this.value.match(FullNameRegEx)) {
+                        TxtNameValidation.innerHTML = '(*) Invalid Name..!!';
+                    }
+                }
+            });
+
+            TxtName.addEventListener('keypress', function (e) {
+                TxtNameValidation.innerHTML = '';
+                var Flag = ((e.which >= 65 && e.which <= 90) || (e.which >= 97 && e.which <= 121));
+                if (Flag === false) {
+                    TxtNameValidation.innerHTML = 'Invalid Input..!!';
+                }
+                return Flag;
+            });
+
+            TxtContactNo.addEventListener('blur', function () {
+                TxtContactNoValidation.innerHTML = '';
+                if (this.value === '' || this.value === null) {
+                    TxtContactNoValidation.innerHTML = '(*) Contact Number Required...!!';
+                } else {
+                    if (!this.value.match(ConNoRegEx)) {
+                        TxtContactNoValidation.innerHTML = '(*) Invalid Contact No...!! ';
+                    }
+                }
+            });
+
+            TxtContactNo.addEventListener('keypress', function (e) {
+                TxtNameValidation.innerHTML = '';
+                var Flag = (e.which >= 48 && e.which <= 57);
+                if (Flag === false) {
+                    TxtNameValidation.innerHTML = 'Invalid Input..!!';
+                }
+                return Flag;
+            });
+
+            TxtEmailId.addEventListener('blur', function () {
+                TxtEmailIdValidation.innerHTML = '';
+                if (this.value === '' || this.value === null) {
+                    TxtEmailIdValidation.innerHTML = '(*) Email Id Required...!!';
+                } else {
+                    if (!this.value.match(EmailIdRegEx)) {
+                        TxtEmailIdValidation.innerHTML = '(*) Invalid Email ID...!! ';
+                    }
+                }
+            });
+
+            TxtContactMsg.addEventListener('blur', function () {
+                TxtContactMsgValidation.innerHTML = '';
+                if (this.value === '' || this.value === null) {
+                    TxtContactMsgValidation.innerHTML = '(*) Contact message required..!!';
+                } else {
+                    if (this.value.length > 300) {
+                        TxtContactMsgValidation.innerHTML = '(*) Invalid contact message..!!';
+                    }
+                }
+            });
+
+            var TxtNameFlag = false,
+                TxtContactNoFlag = false,
+                TxtEmailIdFlag = false,
+                TxtContactMsgFlag = false;
+
+            BtnSubmit.addEventListener('click', function () {
+                TxtNameValidation.innerHTML = '';
+                if (TxtName.value === '' || TxtName.value === null) {
+                    TxtNameValidation.innerHTML = '(*) Name required..!!';
+                    TxtNameFlag = false;
+                } else {
+                    if (!TxtName.value.match(FullNameRegEx)) {
+                        TxtNameValidation.innerHTML = '(*) Invalid name..!!';
+                        TxtNameFlag = false;
+                    } else {
+                        TxtNameFlag = true;
+                    }
+                }
+                TxtContactNoValidation.innerHTML = '';
+                if (TxtContactNo.value === '' || TxtContactNo.value === null) {
+                    TxtContactNoValidation.innerHTML = '(*) Contact no. required..!!';
+                    TxtContactNoFlag = false;
+                } else {
+                    if (!TxtContactNo.value.match(ConNoRegEx)) {
+                        TxtContactNoValidation.innerHTML = '(*) Invalid contact no..!!';
+                        TxtContactNoFlag = false;
+                    } else {
+                        TxtContactNoFlag = true;
+                    }
+                }
+                TxtEmailIdValidation.innerHTML = '';
+                if (TxtEmailId.value === '' || TxtEmailId.value === null) {
+                    TxtEmailIdValidation.innerHTML = '(*) Email id required..!!';
+                    TxtEmailIdFlag = false;
+                } else {
+                    if (!TxtEmailId.value.match(EmailIdRegEx)) {
+                        TxtEmailIdValidation.innerHTML = '(*) Invalid email id..!!';
+                        TxtEmailIdFlag = false;
+                    } else {
+                        TxtEmailIdFlag = true;
+                    }
+                }
+                TxtContactMsgValidation.innerHTML = '';
+                if (TxtContactMsg.value === '' || TxtContactMsg.value === null) {
+                    TxtContactMsgValidation.innerHTML = '(*) Contact message required..!!';
+                    TxtContactMsgFlag = false;
+                } else {
+                    if (TxtContactMsg.value.length > 300) {
+                        TxtContactMsgValidation.innerHTML = '(*) Invalid contact message..!!';
+                        TxtContactMsgFlag = false;
+                    } else {
+                        TxtContactMsgFlag = true;
+                    }
+                }
+                if (TxtNameFlag && TxtContactNoFlag && TxtEmailIdFlag && TxtContactMsgFlag) {
+                    TxtName.value = '';
+                    TxtContactNo.value = '';
+                    TxtEmailId.value = '';
+                    TxtContactMsg.value = '';
+                    alert('Form submitted successfully..!!');
+                } else {
+                    alert('Invalid Input..!!');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
