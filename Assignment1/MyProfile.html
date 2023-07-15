@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY Profile</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="js/wow.min.js" type="text/javascript"></script>
+
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        new WOW().init();
+   </script>
+
+    <style type="text/css">
+        .fullscreen_bg 
+           {
+              position:relative;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              overflow:hidden;
+              z-index:-1;
+            }
+
+     .fullscreen_bg_video 
+                {
+                    position:absolute;
+                    width: auto;
+                    height: auto;
+                    min-width: 100%;
+	                min-height: 100%;
+	            }
+				   #Home
+	            {
+	                height:auto;
+	                padding-bottom:40px;
+	                color:#1a1616;
+	                font-weight:bold
+	            }
+	            
+	            #HomeRow
+	            {
+	                padding-top:7%;   
+	            }
+	            #HomeRow a i.fa
+	            {
+	                color:#110f0f;
+	            }
+	            
+	            #HomeRow div.col-lg-offset-3
+	            {
+	                background:rgba(255, 254, 254, 0.7); 
+	                padding-top:20px;
+	                padding-bottom:20px;
+	                border-radius:5px;
+	                box-shadow:0px 0px 10px rgb(238, 238, 246);   
+	            }
+				#Qualifications
+	            {
+	                background-attachment:fixed;
+	                background-image:url('Image/b1.jpg');
+	                background-repeat:no-repeat;
+	                background-size:cover;
+	                font-size:20px;
+	                padding-bottom:40px;
+	                color:#fbf9f9;
+	            }
+	            #QualificationsRow
+	            {
+	                 margin-top:100px;
+	                 margin-bottom:100px;
+	            }
+	            #QualificationsRow div.col-lg-offset-1
+	            {
+	                padding:10px;
+	                background-color:rgba(30, 30, 30, 0.8);
+	                border-radius:8px;
+	                box-shadow:0px 0px 18px rgb(145, 145, 251);
+	                
+	            }
+	            #Qualifications table
+	            {
+	                width:100%;
+	                margin-top:50px;
+	            }
+	            #Qualifications table tr td
+	            {
+	                padding-bottom:20px;
+	            }
+	            #Qualifications table tr td:first-child
+	            {
+	                width:30%;
+	                padding-left:10px;
+	            }
+				
+                #Skills
+	            {
+	                background-attachment:fixed;
+	                background-image:url('Image/b1.jpg');
+	                background-repeat:no-repeat;
+	                background-size:cover;
+	                font-size:20px;
+	                padding-bottom:40px;
+	                color:#fbf9f9;
+	            }
+	            #SkillsRow
+	            {
+	                 margin-top:100px;
+	                 margin-bottom:100px;
+	            }
+	            #SkillsRow div.col-lg-offset-5
+	            {
+	                padding:10px;
+	                background-color:rgba(30, 30, 30, 0.8);
+	                border-radius:8px;
+	                box-shadow:0px 0px 18px rgb(145, 145, 251);
+	            }
+	            #Skills table
+	            {
+	                width:100%;
+	                margin-top:50px;
+	            }
+	            #Skills table tr td
+	            {
+	                padding-bottom:20px;
+	            }
+	            #Skills table tr td:first-child
+	            {
+	                width:30%;
+	                padding-left:10px;
+	            }
+                #Thank{
+                    background-color: #110f0f;
+                    padding-bottom: 40px;
+                    color: #ffffff;
+                }
+				 #HeaderDiv a.navbar-brand
+	            {
+	                font-family:Monotype Corsiva;
+	                font-size:25px;    
+	                color:#eadede;
+	            }
+	            #navbarCollapse li b
+	            {
+	                color:#ddd5d5;
+	            }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="z-index: 1000;">
+            <div class="navbar-header" id="HeaderDiv">
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Mahek Monpara</a>
+            </div>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right" style="font-size:13px;padding-right:15px;">
+                    <li><a href="#Home"><b>Intro</b></a></li>
+                    <li><a href="#Qualifications"><b>Qualifications</b></a></li>
+                    <li><a href="#Skills"><b>Skills</b></a></li>
+                    <li><a href="#Portfolio"><b>Portfolio</b></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div id="Home" class="fullscreen_bg">
+        <video src="Video/V1.mp4" autoplay loop muted class="fullscreen_bg_video"></video>
+        <div class="row" id="HomeRow">
+            <div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-lg-6 col-md-6 col-sm-8 col-xs-12 wow slideInDown"
+                data-wow-duration="3s">
+                <center><img src="Image/I1.jpg" alt="Mahek Monpara" height="100" width="100" /></center>
+                <center>
+                    <h2>Mahek Monpara</h2>
+                </center>
+                <center>
+                    <h5>Student Of Silver Oak University</h5>
+                    <hr />
+                </center>
+                <div class="row">
+                    <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-5 col-md-5 col-sm-5">
+                        <center><i class="fa fa-2x fa-phone"></i> +91- 9016067182</center>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-6">
+                        <center><i class="fa fa-2x fa-envelope"></i> <a href="mailto:mahekmonpara2021@gmail.com"style="color: black;">mahekmonpara2021@gmail.com</a></center>
+                    </div>
+                </div>
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    <div id="Qualifications" class="container-fluid">
+        <div class="row" id="QualificationsRow">
+            <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-6 col-md-6 col-sm-6 wow slideInRight" data-wow-duration="3s">
+                <br /><h2 class="text-center"><i class="fa fa-object-group"></i>Education Qualification</h2><hr />
+                <table class="table table-responsive">
+                    <tr>
+                        <td>Form-Pursuing</td>
+                        <td>B.Tech<br />Silver Oak University</td>
+                    </tr>
+                    <tr>
+                        <td>Year<br />2021</td>
+                        <td> H.Sc <br />P. P. Savani Vidyabhavan, Surat<br />G.S.E.B. board<br />with 81.54% marks</td>
+                    </tr>
+                    <tr>
+                        <td>Year<br />2019</td>
+                        <td>S.Sc<br />P. P. Savani Vidyabhavan, Surat<br />G.S.E.B. board<br />with 80.33% marks</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="Skills" class="container-fluid">
+        <div class="row" id="SkillaRow">
+            <div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-5 col-lg-6 col-md-6 col-sm-6 wow slideInLeft" data-wow-duration="3s">
+                <center><br /><h2><i class="fa fa-object-group"></i>Technical Skills</h2><hr /></center>
+                <table>
+                    <tr>
+                        <td>Programming Languages:</td>
+                        <td>C<br />PHP<br />JavaScript<br />JQuery<br />Java<br />Python</td>
+                    </tr>
+                    <tr>
+                        <td>Operating Systems:</td>
+                        <td>Microsoft Windows.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="Thank" class="container-fluid">
+        <div class="row" id="ThankRow">
+            <center><br /><h2>Thank You!!</h2></center>
+        </div>
+    </div>
+</body>
+
+</html>
